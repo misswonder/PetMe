@@ -21,9 +21,9 @@ p2 = Pet.create!(breed_id: b2.id, name: "Corgi", age: "Adult", gender: "Female",
 p3 = Pet.create!(breed_id: b3.id, name: "Diva", age: "Senior", gender: "Female", size: "Small", color: "White", good_with_children: false, house_trained: false, special_needs: false, temperament: "Arrogant")
 
 
-u1 = User.create!(username: "Boonie", email:"boonie@gmail.com")
-u2 = User.create!(username: "Yvonne", email:"yvonne@gmail.com")
-u3 = User.create!(username: "Zach", email:"zach@gmail.com")
+u1 = User.create!(username: "Boonie", email:"boonie@gmail.com", password: "12345")
+u2 = User.create!(username: "Yvonne", email:"yvonne@gmail.com", password: "ABCDE")
+u3 = User.create!(username: "Zach", email:"zach@gmail.com", password: "ZXCVB")
 
 
 po1 = Profile.create!(pet_id: p1.id, user_id: u1.id)

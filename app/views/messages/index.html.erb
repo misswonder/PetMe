@@ -1,0 +1,18 @@
+<ul>
+  <% @messages.each do |message| %>
+    <% if message.content %>
+      <li>
+        <h4><%= message.user.username %></h4>
+        <p><%= message.content %></p>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= form_for [@conversation, @message] do |f| %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Your message" %>
+  </div>
+
+  <%= f.submit "Send" %>
+<% end %>
