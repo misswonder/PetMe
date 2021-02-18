@@ -1,9 +1,16 @@
 require 'petfinder'
 
-Profile.destroy_all 
-Pet.destroy_all
+require 'petfinder'
+require_relative '../.api_key.rb'
+
+# Profile.destroy_all 
+# Pet.destroy_all
 User.destroy_all
-Breed.destroy_all 
+# Breed.destroy_all 
+
+  
+PETFINDER = Petfinder::Client.new
+
 
 Petfinder.configure do |config|
     config.api_key = 'ESVgrWdR9xyGTq5IuJYlb5FJ6JhZYWb5pUyY7zx5ozrttfgHYS'
@@ -48,6 +55,15 @@ end
 cats.each_with_index do |animal, i|
     Pet.create!(
         breed_id: i+1,
+=======
+animals, pagination = PETFINDER.animals(type: 'dog', location: '90210', page: 1)
+
+# ap animals.first
+# [[animals],[pagination]]
+
+animals.each do |animal|
+    Pet.create!(
+
         name: animal.name,
         age: animal.age,
         gender: animal.gender,
@@ -60,6 +76,7 @@ cats.each_with_index do |animal, i|
     )
 end 
 
+
 # b1 = Breed.create!(species: "Dog", name: "Pitbull")
 # b2 = Breed.create!(species: "Dog", name: "Corgi")
 # b3 = Breed.create!(species: "Cat", name: "Persian")
@@ -67,6 +84,8 @@ end
 # p1 = Pet.create!(breed_id: b1.id, name: "Choppo", age: "Young", gender: "Male", size: "Large", color: "White/Brown", good_with_children: true, house_trained: true, special_needs: false, temperament: "Friendly")
 # p2 = Pet.create!(breed_id: b2.id, name: "Corgi", age: "Adult", gender: "Female", size: "Medium", color: "Creamy", good_with_children: true, house_trained: true, special_needs: false, temperament: "Introvert")
 # p3 = Pet.create!(breed_id: b3.id, name: "Diva", age: "Senior", gender: "Female", size: "Small", color: "White", good_with_children: false, house_trained: false, special_needs: false, temperament: "Arrogant")
+=======
+
 
 
 u1 = User.create!(username: "Boonie", email:"boonie@gmail.com", password: "12345")
@@ -77,5 +96,9 @@ u3 = User.create!(username: "Zach", email:"zach@gmail.com", password: "ZXCVB")
 # po1 = Profile.create!(pet_id: p1.id, user_id: u1.id)
 # po2 = Profile.create!(pet_id: p2.id, user_id: u2.id)
 # po3 = Profile.create!(pet_id: p3.id, user_id: u3.id)
+=======
+# po1 = Profile.create!(pet_id: Pet.all[0].id, user_id: u1.id)
+# po2 = Profile.create!(pet_id: Pet.all[1].id, user_id: u2.id)
+
 
 
