@@ -1,18 +1,14 @@
 <h1>Pet Names</h1> 
 
-<ul>
-<li>
-<% @pets.each do |dog| %><br>
-<%= link_to dog.name, pet_path(dog) %><br>
-<% end %>
-</li>
-</ul>
+<% @pets_by_species.each do |species, pets| %>
+<h3><%= species %></h3>
 
 <ul>
-<li>
-<% @pets.each do |cat| %><br>
-<%= link_to cat.name, pet_path(cat) %><br>
-<% end %>
-</li>
+    <li>
+    <% pets.each do |pet| %><br>
+        <%= link_to pet.name, pet_path(pet) %><br>
+    <% end %>
+    </li>
 </ul>
+<% end %>
 
