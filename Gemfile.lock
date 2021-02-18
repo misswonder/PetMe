@@ -227,7 +227,10 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+<<<<<<< HEAD
   x86_64-darwin-20
+=======
+>>>>>>> 01d0a6fb81bdc5781cfbd3365ccb07483f9eaa53
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
