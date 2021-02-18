@@ -9,7 +9,7 @@ class PetsController < ApplicationController
     end
 
     def new
-        @pet = pet.new
+        @pet = Pet.new
     end 
 
 end

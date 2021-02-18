@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'users', to: 'users#create'
   # get ‘conversations/index’
   resources :users
-  resources :profiles, only: [:index, :show, :new, :create]
+  resources :profiles
   resources :pets
   resources :breeds
   resources :conversations, only: [:index, :create] do

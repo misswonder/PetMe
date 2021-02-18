@@ -1,5 +1,9 @@
 <h1><%= "Welcome to PetMe, #{@user.username}!" %></h1>
-<p><% @user.pets.each do |p| %>
-    <%= p.name %>
+<ul><% @user.pets.each do |p| %>
+<li>
+    <%= p.name %></li>
     <% end %>
-</p>
+</ul>
+
+<p><%= link_to "Visit All Your Pets", profiles_path %></p>
+

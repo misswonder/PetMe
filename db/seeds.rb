@@ -54,7 +54,7 @@ cats.each do |animal|
         house_trained: animal.attributes["house_trained"],
         special_needs: animal.attributes["special_needs"],
         temperament: animal.tags.join(' ').strip,
-        image: animal.photos.first
+        image: animal.photos.first&.full
     )
 end
 
