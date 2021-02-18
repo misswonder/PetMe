@@ -7,35 +7,34 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'petfinder'
+require_relative '../.api_key.rb'
 
 # Profile.destroy_all 
 # Pet.destroy_all
 User.destroy_all
 # Breed.destroy_all 
 
-Petfinder.configure do |config|
-    config.api_key = 'ESVgrWdR9xyGTq5IuJYlb5FJ6JhZYWb5pUyY7zx5ozrttfgHYS'
-    config.api_secret = 'FrA4yn5xeK9O3dAnDKw1uG62fPMnDP38PG53LuXQ'
-end
   
 PETFINDER = Petfinder::Client.new
 
 animals, pagination = PETFINDER.animals(type: 'dog', location: '90210', page: 1)
+
+# ap animals.first
 # [[animals],[pagination]]
 
-# all_dogs.each do |dog|
-#     Pet.create!(
-#         name: dog.first.name,
-#         age: dog.first.age,
-#         gender: dog.first.gender,
-#         size: dog.first.size,
-#         color: dog.first.colors["primary"],
-#         good_with_children: dog.first.environment["children"],
-#         house_trained: dog.first.attributes["house_trained"],
-#         special_needs: dog.first.attributes["special_needs"],
-#         temperament: dog.first.tags.each { |t| puts t }
-#     )
-# end 
+animals.each do |animal|
+    Pet.create!(
+        name: animal.name,
+        age: animal.age,
+        gender: animal.gender,
+        size: animal.size,
+        color: animal.colors["primary"],
+        good_with_children: animal.environment["children"],
+        house_trained: animal.attributes["house_trained"],
+        special_needs: animal.attributes["special_needs"],
+        temperament: animal.tags.join(' ').strip
+    )
+end 
 
 
 u1 = User.create!(username: "Boonie", email:"boonie@gmail.com", password: "12345")
