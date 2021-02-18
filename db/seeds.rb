@@ -1,11 +1,18 @@
 require 'petfinder'
 
-Profile.destroy_all 
-Pet.destroy_all
+require 'petfinder'
+require_relative '../.api_key.rb'
+
+# Profile.destroy_all 
+# Pet.destroy_all
 User.destroy_all
 Breed.destroy_all 
 Message.destroy_all
 Conversation.destroy_all 
+# Breed.destroy_all 
+
+  
+PETFINDER = Petfinder::Client.new
 
 
 Petfinder.configure do |config|
@@ -62,6 +69,7 @@ cats.each_with_index do |animal, i|
         temperament: animal.tags.join(' ').strip
     )
 end 
+
 
 # b1 = Breed.create!(species: "Dog", name: "Pitbull")
 # b2 = Breed.create!(species: "Dog", name: "Corgi")
