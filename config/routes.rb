@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'users#new'
+  root to: 'pages#home'
   get 'users/new', to: 'users#new', as: :new_user
   post 'users', to: 'users#create'
   # get ‘conversations/index’

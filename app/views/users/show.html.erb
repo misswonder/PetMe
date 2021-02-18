@@ -1,0 +1,5 @@
+<h1><%= "Welcome to PetMe, #{@user.username}!" %></h1>
+<p><% @user.pets.each do |p| %>
+    <%= p.name %>
+    <% end %>
+</p>
