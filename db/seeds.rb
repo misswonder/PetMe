@@ -16,12 +16,12 @@ PETFINDER = Petfinder::Client.new
 dogs, pagination = PETFINDER.animals(type: 'dog', location: '11238', page: 1)
 
 dogs.each do |animal|
-    all_breed = Breed.find_or_create_by!(
+    breed = Breed.find_or_create_by!(
         species: animal.species,
         name: animal.breeds["primary"]
     )
     Pet.create!(
-        breed_id: all_breed.id,
+        breed_id: breed.id,
         name: animal.name,
         age: animal.age,
         gender: animal.gender,
@@ -39,12 +39,12 @@ end
 cats, pagination = PETFINDER.animals(type: 'cat', location: '11238', page: 1)
 
 cats.each do |animal|
-    all_breed = Breed.create!(
+    breed = Breed.find_or_create_by!(
         species: animal.species,
         name: animal.breeds["primary"]
     )
     Pet.create!(
-        breed_id: all_breed.id,
+        breed_id: breed.id,
         name: animal.name,
         age: animal.age,
         gender: animal.gender,
