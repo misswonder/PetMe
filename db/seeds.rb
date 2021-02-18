@@ -7,34 +7,36 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Profile.destroy_all 
-Pet.destroy_all
+# Pet.destroy_all
 User.destroy_all 
-Breed.destroy_all 
+# Breed.destroy_all 
 Message.destroy_all
 Conversation.destroy_all 
 
 
-b1 = Breed.create!(species: "Dog", name: "Pitbull")
-b2 = Breed.create!(species: "Dog", name: "Corgi")
-b3 = Breed.create!(species: "Cat", name: "Persian")
-b4 = Breed.create!(species: "Dog", name: "Husky")
-b5 = Breed.create!(species: "Dog", name: "German Shepherd")
-b6 = Breed.create!(species: "Dog", name: "Golden Retriever")
-b7 = Breed.create!(species: "Cat", name: "Scottish Fold")
-b8 = Breed.create!(species: "Cat", name: "Munchkin cat")
+# b1 = Breed.create!(species: "Dog", name: "Pitbull")
+# b2 = Breed.create!(species: "Dog", name: "Corgi")
+# b3 = Breed.create!(species: "Cat", name: "Persian")
+# b4 = Breed.create!(species: "Dog", name: "Husky")
+# b5 = Breed.create!(species: "Dog", name: "German Shepherd")
+# b6 = Breed.create!(species: "Dog", name: "Golden Retriever")
+# b7 = Breed.create!(species: "Cat", name: "Scottish Fold")
+# b8 = Breed.create!(species: "Cat", name: "Munchkin cat")
 
 
 
-p1 = Pet.create!(breed_id: b1.id, name: "Choppo", age: "Young", gender: "Male", size: "Large", color: "White/Brown", good_with_children: true, house_trained: true, special_needs: false, temperament: "Friendly")
-p2 = Pet.create!(breed_id: b2.id, name: "Corgi", age: "Adult", gender: "Female", size: "Medium", color: "Brown/Black", good_with_children: true, house_trained: true, special_needs: false, temperament: "Introvert", image: '/images/corgi-1.jpg')
-p3 = Pet.create!(breed_id: b3.id, name: "Diva", age: "Senior", gender: "Female", size: "Small", color: "White", good_with_children: false, house_trained: false, special_needs: false, temperament: "Arrogant")
-p4 = Pet.create!(breed_id: b4.id, name: "Joey", age: "Puppy", gender: "Male", size: "Medium", color: "Black", good_with_children: true, house_trained: false, special_needs: false, temperament: "Playful")
-p5 = Pet.create!(breed_id: b5.id, name: "Bella", age: "Young", gender: "Female", size: "Large", color: "Tawny", good_with_children: true, house_trained: true, special_needs: true, temperament: "Sweet")
-p6 = Pet.create!(breed_id: b6.id, name: "Cooper", age: "Adult", gender: "Male", size: "Medium", color: "Blonde", good_with_children: true, house_trained: true, special_needs: false, temperament: "Energetic")
-p7 = Pet.create!(breed_id: b7.id, name: "Rupert", age: "Young", gender: "Male", size: "Small", color: "Black/White", good_with_children: true, house_trained: true, special_needs: true, temperament: "Shy")
-p8 = Pet.create!(breed_id: b8.id, name: "Shadow", age: "Kitten", gender: "Male", size: "Small", color: "Tabby", good_with_children: true, house_trained: false, special_needs: false, temperament: "Friendly")
-p9 = Pet.create!(breed_id: b1.id, name: "Blue", age: "Adult", gender: "Female", size: "Medium", color: "Black", good_with_children: true, house_trained: false, special_needs: false, temperament: "Courageous")
-p10 = Pet.create!(breed_id: b2.id, name: "Barnie", age: "Young", gender: "Male", size: "Small", color: "Brown", good_with_children: true, house_trained: false, special_needs: false, temperament: "Bubbly", image: '/images/corgi-2.jpg')
+# p1 = Pet.create!(breed_id: b1.id, name: "Choppo", age: "Young", gender: "Male", size: "Large", color: "White/Brown", good_with_children: true, house_trained: true, special_needs: false, temperament: "Friendly")
+# p2 = Pet.create!(breed_id: b2.id, name: "Corgi", age: "Adult", gender: "Female", size: "Medium", color: "Brown/Black", good_with_children: true, house_trained: true, special_needs: false, temperament: "Introvert", image: '/images/corgi-1.jpg')
+# p3 = Pet.create!(breed_id: b3.id, name: "Diva", age: "Senior", gender: "Female", size: "Small", color: "White", good_with_children: false, house_trained: false, special_needs: false, temperament: "Arrogant")
+# p4 = Pet.create!(breed_id: b4.id, name: "Joey", age: "Puppy", gender: "Male", size: "Medium", color: "Black", good_with_children: true, house_trained: false, special_needs: false, temperament: "Playful")
+# p5 = Pet.create!(breed_id: b5.id, name: "Bella", age: "Young", gender: "Female", size: "Large", color: "Tawny", good_with_children: true, house_trained: true, special_needs: true, temperament: "Sweet")
+# p6 = Pet.create!(breed_id: b6.id, name: "Cooper", age: "Adult", gender: "Male", size: "Medium", color: "Blonde", good_with_children: true, house_trained: true, special_needs: false, temperament: "Energetic")
+# p7 = Pet.create!(breed_id: b7.id, name: "Rupert", age: "Young", gender: "Male", size: "Small", color: "Black/White", good_with_children: true, house_trained: true, special_needs: true, temperament: "Shy")
+# p8 = Pet.create!(breed_id: b8.id, name: "Shadow", age: "Kitten", gender: "Male", size: "Small", color: "Tabby", good_with_children: true, house_trained: false, special_needs: false, temperament: "Friendly")
+# p9 = Pet.create!(breed_id: b1.id, name: "Blue", age: "Adult", gender: "Female", size: "Medium", color: "Black", good_with_children: true, house_trained: false, special_needs: false, temperament: "Courageous")
+# p10 = Pet.create!(breed_id: b2.id, name: "Barnie", age: "Young", gender: "Male", size: "Small", color: "Brown", good_with_children: true, house_trained: false, special_needs: false, temperament: "Bubbly", image: '/images/corgi-2.jpg')
+
+
 
 
 
