@@ -1,7 +1,7 @@
 class PetsController < ApplicationController
 
     def index
-        @pets = Pet.all
+        @pets_by_species = Pet.preload(:breed).group_by { |pet| pet.breed.species }
     end
 
     def show 
@@ -9,7 +9,7 @@ class PetsController < ApplicationController
     end
 
     def new
-        @pet = pet.new
+        @pet = Pet.new
     end 
 
 end

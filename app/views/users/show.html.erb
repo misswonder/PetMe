@@ -1,0 +1,24 @@
+<h1><%= "Welcome to PetMe, #{@user.username}!" %></h1>
+<h2>Your Pets</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pet Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= link_to profile.pet.name, pet_path %></td>
+        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "Add Pets", new_profile_path %></p> 
+<p><%= link_to "Visit All Your Pets", profiles_path %></p>
+<p><%= link_to "View Your Messages", conversations_path %></p>

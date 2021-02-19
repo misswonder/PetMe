@@ -1,0 +1,19 @@
+<h1>Pet Profile</h1>
+
+<img style="max-width: 600px; max-height: 500px" src="<%= @pet.image %>" />
+<h4><b> Name: </b><%= @pet.name %></h4>
+<h4><b> Breed: </b><%= @pet.breed.name %></h4>
+<h4><b> Age: </b><%= @pet.age %></h4>
+<h4><b> Gender: </b><%= @pet.gender %></h4>
+<h4><b> Size: </b><%= @pet.size %></h4>
+<h4><b> Color: </b><%= @pet.color %></h4>
+<h4><b> Good with Children: </b><%= @pet.good_with_children %></h4>
+<h4><b> House Trained: </b><%= @pet.house_trained %></h4>
+<h4><b> Special needs: </b><%= @pet.special_needs %></h4>
+<h4><b> Personality: </b><%= @pet.temperament %></h4>
+
+<h3><%= link_to "Back to All Pets", pets_path %></h3>
+
+
+
+
