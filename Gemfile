@@ -27,6 +27,7 @@ gem 'bootstrap', '~> 5.0.0.beta1'
 gem 'sprockets-rails', '~> 3.2.2'
 gem 'awesome_print'
 gem 'cancancan'
+gem 'jquery-rails'
 
 
 # Use Active Storage variant
