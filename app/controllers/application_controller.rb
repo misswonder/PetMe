@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     end
 
     def authorize
-        redirect_to login_path, alert: 'You must be logged in to access this page.' if current_user.nil?
+        redirect_to login_path, alert: 'You must be logged in to access this page. Please log in or sign up.' if current_user.nil?
+    end
+
+    rescue_from CanCan::AccessDenied do |exception|
+        redirect_to user_path(@current_user), alert: "Access denied!"
     end
 end

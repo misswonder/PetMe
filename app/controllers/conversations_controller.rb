@@ -1,5 +1,6 @@
 class ConversationsController < ApplicationController
   # before_action :authenticate
+  before_action :authorize
 
   def index
     @conversations = Conversation.where("sender_id = ? OR recipient_id = ?", current_user.id, current_user.id)

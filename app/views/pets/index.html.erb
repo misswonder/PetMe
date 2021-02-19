@@ -1,7 +1,7 @@
 <h1>All Pets</h1> 
 
 <% @pets_by_species.each do |species, pets| %>
-<h3><%= species %></h3>
+<h3><%= species.pluralize %></h3>
 
 <ul>
     <li>
