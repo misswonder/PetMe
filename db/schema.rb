@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_18_173455) do
+ActiveRecord::Schema.define(version: 2021_02_19_045539) do
 
   create_table "breeds", force: :cascade do |t|
     t.string "species"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_02_18_173455) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
+    t.integer "role"
   end
 
   add_foreign_key "messages", "conversations"

@@ -25,6 +25,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'petfinder'
 gem 'bootstrap', '~> 5.0.0.beta1'
 gem 'sprockets-rails', '~> 3.2.2'
+gem 'awesome_print'
+gem 'cancancan'
 
 
 # Use Active Storage variant
@@ -36,7 +38,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'awesome_print'
 end
 
 group :development do
