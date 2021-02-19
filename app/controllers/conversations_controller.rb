@@ -1,5 +1,5 @@
 class ConversationsController < ApplicationController
-  before_action :authenticate
+  # before_action :authenticate
 
   def index
     @conversations = Conversation.where("sender_id = ? OR recipient_id = ?", current_user.id, current_user.id)
@@ -18,6 +18,6 @@ class ConversationsController < ApplicationController
 
   private
     def conversation_params
-      params.require(:conversation).permit(:sender_id, :recipient_id)
+      params.permit(:sender_id, :recipient_id)
     end
 end

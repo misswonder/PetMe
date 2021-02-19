@@ -5,7 +5,6 @@ Profile.destroy_all
 Pet.destroy_all
 Breed.destroy_all
 User.destroy_all
-Message.destroy_all
 Conversation.destroy_all 
 
   
@@ -106,9 +105,5 @@ c3 = Conversation.create!(sender_id: u3.id, recipient_id: u1.id)
 c4 = Conversation.create!(sender_id: u4.id, recipient_id: u5.id)
 c5 = Conversation.create!(sender_id: u5.id, recipient_id: u6.id)
 
-
-# m1 = Message.create!(content: "Hi, how can I help you?", conversation_id: c1.id, user_id: u1.id, read: true)
-# m2 = Message.create!(content: "Hi, how can I help you?", conversation_id: c2.id, user_id: u2.id, read: false)
-# m3 = Message.create!(content: "Hi, how can I help you?", conversation_id: c3.id, user_id: u3.id, read: true)
 
 

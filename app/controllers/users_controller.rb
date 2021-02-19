@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
 
+    before_action :authorize, only: [:show]
+
     def index
         @users = User.all
     end
 
     def show 
         @user = User.find_by(id: params[:id])
+        @profiles = @user.profiles
     end
 
     def new
