@@ -1,7 +1,8 @@
 class ProfilesController < ApplicationController
 
-    before_action :authorize, only: [:index]
+    before_action :authorize, only: [:index, :new, :edit]
     before_action :set_profile, only: [:show, :edit, :update, :destroy]
+    load_and_authorize_resource
 
     def index
         @profiles = Profile.all
@@ -43,7 +44,7 @@ class ProfilesController < ApplicationController
     
     def destroy
         @profile.destroy
-        redirect_to user_path(@profile.user_id)
+        redirect_to profiles_path
     end
 
   

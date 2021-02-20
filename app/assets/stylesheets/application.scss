@@ -18,6 +18,9 @@
  body {
      background-repeat: no-repeat;
      background-size: cover;
+     background-color: #F3EBF6;
+     font-family: 'Ubuntu', sans-serif;
+     background-image: linear-gradient(#f8edeb,#fae1dd);
  }
 
  h1 {
@@ -34,4 +37,9 @@
     color: #EA7317;
     text-align: center;
     vertical-align: bottom;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
 }

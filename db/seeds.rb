@@ -78,11 +78,5 @@ pro9 = Profile.create!(pet_id: Pet.all[8].id, user_id: u3.id)
 pro10 = Profile.create!(pet_id: Pet.all[9].id, user_id: u4.id)
 
 
-c1 = Conversation.create!(sender_id: u1.id, recipient_id: u2.id)
-c2 = Conversation.create!(sender_id: u2.id, recipient_id: u3.id)
-c3 = Conversation.create!(sender_id: u3.id, recipient_id: u1.id)
-c4 = Conversation.create!(sender_id: u4.id, recipient_id: u5.id)
-c5 = Conversation.create!(sender_id: u5.id, recipient_id: u6.id)
-
 
 

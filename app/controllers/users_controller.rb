@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :authorize, only: [:show]
+    before_action :authorize, only: :index
 
     def index
         @users = User.all
@@ -20,8 +20,8 @@ class UsersController < ApplicationController
         @user.email.downcase!
         
         if @user.save
-          flash[:notice] = "Account created successfully!"
-          redirect_to user_path(@user)
+          flash[:notice] = "Account created successfully! Please log in."
+          redirect_to root_path
         else
           flash.now.alert = "Oops, couldn't create account. Please make sure you are using a valid username, email and password and try again."
           render :new

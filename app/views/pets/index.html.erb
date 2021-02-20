@@ -1,15 +1,13 @@
 <h1>All Pets</h1> 
 
 <% @pets_by_species.each do |species, pets| %>
-<h3><%= species %></h3>
+<h3><%= species.pluralize %></h3>
 
-<ul>
-    <li>
+<p style="text-align:center">
     <% pets.each do |pet| %><br>
         <%= link_to pet.name, pet_path(pet) %>
-        <img style="max-width: 350px; max-height: 200px" src="<%= pet&.image %>" /><br>
+        <img class="center" style="max-width: 350px; max-height: 200px" src="<%= pet&.image %>" /><br>
     <% end %>
-    </li>
-</ul>
+</p>
 <% end %>
 

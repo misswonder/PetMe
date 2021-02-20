@@ -13,9 +13,8 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><%= profile.pet.name %></td>
-        <td><%= profile.user.username %></td>
-        <td><%= link_to 'Show', user_path(profile.user.id) %></td>
+        <td><%= link_to profile.pet.name, pet_path(profile.pet.id) %></td>
+        <td><%= link_to profile.user.username, user_path(profile.user.id) %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
